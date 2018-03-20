@@ -35,12 +35,6 @@ If you have git installed (Replace 9752aad with the id of the latest release tag
 
 > $ sudo make install
 
-### Developers
-
-> Akash Krishnan
-
-> Akhileshwar Maurya
-
 Fix missing dependencies by installing the python dependencies via pip (Generic)
 
 > $ sudo apt-get install python python-pip
@@ -120,3 +114,9 @@ syncplay command is to create a server initially. Later the client has to join t
 Now load the video which you downloaded using the quickshare.py to the client side as well. 
 
 Finally, the video will be synchronized on different screens.
+
+### Developers
+
+* Akash Krishnan (https://github.com/akashfoss)
+
+* Akhileshwar Maurya (https://github.com/akhilesh0070)
