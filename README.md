@@ -41,13 +41,13 @@ Fix missing dependencies by installing the python dependencies via pip (Generic)
 
 > $ pip install twisted
 
+> $ pip install PySide
+
 For syncplay service, if you have screen not installed
 
 > $ sudo apt-get install screen
 
 > $ sudo nano -w /etc/init.d/syncplay
-
-> $ pip install PySide
 
 ```
 #!/bin/bash
@@ -108,3 +108,9 @@ On to the final step, we only have to make our init script executable now and ou
 > $ sudo chmod +x /etc/init.d/syncplay
 
 Now, try start with a new terminal and run **syncplay**
+
+syncplay command is to create a server initially. Later the client has to join the show by running the syncplayClient.py, and fill the necessary blocks, like - username, default port, etc. And click on "I'm ready to watch" option, on the both side.
+
+Now load the video which you downloaded using the quickshare.py to the client side as well. 
+
+Finally, the video will be synchronized on different screens.
