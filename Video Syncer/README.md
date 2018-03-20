@@ -1,8 +1,14 @@
+#Video Syncer
+
 It synchronises the position and play state of multiple media players so that the viewers can watch the same thing at the same time.
 This means that when one person pauses/unpauses playback or seeks (jumps position) within their media player then this will be replicated across all media players connected to the same server and in the same 'room' (viewing session).
 When a new person joins they will also be synchronised. Syncplay also includes text-based chat so you can discuss a video as you watch it (or you could use third-party Voice over IP software to talk over a video).
 
 Since, this application can be used in a LAN and thereby, it could save a lot of data and run a video in multiple desktops without needing a high bandwith connection.
+
+## Requirements
+
+All you need is Python 2.7 and Twisted to run python scripts.
 
 ## What it doesn't do
 
