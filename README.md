@@ -30,3 +30,81 @@ If you have git installed (Replace 9752aad with the id of the latest release tag
 > $ git clone https://github.com/Syncplay/syncplay.git ./
 
 > $ git reset --hard 9752aad
+
+> $ sudo chown -R syncplay *
+
+> $ sudo make install
+
+Fix missing dependencies by installing the python dependencies via pip (Generic)
+
+> $ sudo apt-get install python python-pip
+
+> $ pip install twisted
+
+For syncplay service, if you have screen not installed
+
+> $ sudo apt-get install screen
+
+> $ sudo nano -w /etc/init.d/syncplay
+
+> $ pip install PySide
+
+```
+#!/bin/bash
+# Start script for Syncplay server
+
+server_start()
+{
+    running=`screen -ls | grep syncplay-server`
+    if [ "$running" == "" ]; then
+        screen -dmS syncplay-server
+        screen -S syncplay-server -X screen syncplay-server --password myPassword --port 4567 --salt XXXXXXXX --motd-file /opt/syncplay/motd.txt
+        echo "Syncplay sever started"
+    else
+        echo "Syncplay server already running"
+    fi
+}
+
+server_stop()
+{
+    running=`screen -ls | grep syncplay`
+    if [ "$running" != "" ]; then
+        screen -ls | grep syncplay-server | cut -d. -f1 | awk '{print $1}' | xargs kill
+        echo "Syncplay sever stopped"
+    else
+        echo "Syncplay server not running"
+    fi
+}
+
+
+case "$1" in
+    start)
+        server_start
+        ;;
+
+    stop)
+        server_stop
+        ;;
+
+    restart|reload)
+        server_stop
+        server_start
+        ;;
+
+    status)
+        echo "Syncplay servers found (if any):"
+        screen -ls | grep syncplay-server
+        ;;
+
+    *)
+        echo "usage: $0 start|stop|restart|reload|status" >&2
+        exit 1
+esac
+
+exit 0
+```
+On to the final step, we only have to make our init script executable now and our server is ready to go! 
+
+> $ sudo chmod +x /etc/init.d/syncplay
+
+Now, try start with a new terminal and run **syncplay**
