@@ -15,7 +15,6 @@ All you need is Python 2.7 and Twisted to run python scripts.
 It is not a file sharing service and thereby we use quickshare.py script to share files in a LAN.
 
 ## resources
-* *Developers - Akhileshwar Maurya and Akash Krishnan
 * *GUI Design of the visual studio - Pyside
 * *Original SyncPlay code* - https://github.com/fluxid/syncplay
 * *Other contributors* - See http://syncplay.pl/about/development/
