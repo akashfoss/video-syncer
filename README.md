@@ -35,6 +35,12 @@ If you have git installed (Replace 9752aad with the id of the latest release tag
 
 > $ sudo make install
 
+### Developers
+
+> Akash Krishnan
+
+> Akhileshwar Maurya
+
 Fix missing dependencies by installing the python dependencies via pip (Generic)
 
 > $ sudo apt-get install python python-pip
